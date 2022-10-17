@@ -1,0 +1,59 @@
+<div class="container d-flex justify-content-center">
+    <div class="row">
+        <section class="col">
+            <h2>Edit Blog</h2>
+            {{#each posts as |blog|}}
+            <form class="new-blog-form">
+                <div>
+                    <input style="width: 500px" id="edit-blog-title" name="blog-title" type="text"
+                        value="{{blog.title}}" /><br><br>
+                </div>
+                <div>
+                    <textarea style="width: 500px; height:300px" id="edit-blog-post" name="blog-post"
+                        type="text">{{blog.post_url}}</textarea>
+                </div>
+                <button id="save-blog-btn" style="color: #00FF00" type="submit"
+                    class="btn btn-success my-1">Submit</button><br>
+                <button id="delete-blog-btn" style="color: #00FF00" type="submit"
+                    class="btn btn-danger my-1">Delete</button><br>
+            </form>
+            <br>
+
+            {{!-- <form class="comment-form col-4">
+                <div>
+                    <textarea style="width: 500px" name="comment-body"></textarea>
+                </div>
+
+                <div>
+                    <button style="color: #00FF00" id="comment-submit" type="button"
+                        class="btn btn-success">Comment</button>
+                </div>
+            </form> --}}
+        </section>
+        <section class="col">
+            <div class="card-body d-flex flex align-items-start">
+                <div class="row">
+                    <div class="col-12">
+                        <br>
+                        <br>
+                        
+                        {{#each post.comments as |comment|}}
+                        <div class="card d-flex row">
+                            <strong class="d-inline-block mb-auto text-success">{{comment.comment_text}}</strong>
+                            <div class="mb-4 text-muted">by {{user.username}} </div>
+                            <p class="card-text mb-auto"></p>
+                            <a href="#">{{comment.created_at}}</a>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </section>
+    </div>
+</div>
+
+
+<script src="/javascript/edit-blog.js"></script>
+<script src="/javascript/delete-blog.js"></script>
+<script src="/javascript/comment.js"></script>

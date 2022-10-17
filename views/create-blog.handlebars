@@ -1,0 +1,39 @@
+<div class="container d-flex justify-content-center">
+    <div class="row">
+        <section class="col">
+            <h2>Create New Post</h2>
+
+            <form class="new-blog-form">
+                <div>
+                    <label for="blog-title">Title</label><br>
+                    <input style="width: 500px;" type="text" id="blog-title" name="blog-title" /><br><br>
+                </div>
+                <div>
+                    <label for="blog-post">Body</label><br>
+                    <textarea style="width: 500px; height:300px" id="blog-post" name="blog-post"></textarea>
+                </div>
+                <button style="color: #00FF00" type="submit" class="btn btn-success">Create</button><br>
+            </form>
+        </section><br>
+    </div>
+</div>
+<section>
+    <h2 class="container d-flex justify-content-center">Your Blogs</h2>
+    <section class="container d-flex justify-content-center">
+        {{#each posts as |post|}}
+        <div class="card d-flex" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{format_date createdAt}}</h6>
+                <p>{{format_blog post_url}}</p>
+                <p>{{comments.length}} {{format_plural "comment" comments.length}}</p>
+                <button class="btn btn-success"><a href="/edit-blogs/{{post.id}}" class="edit-link btn">Edit
+                        post</a></button>
+            </div>
+        </div>
+        {{/each}}
+    </section>
+</section>
+
+
+<script src="/javascript/add-blog.js"></script>

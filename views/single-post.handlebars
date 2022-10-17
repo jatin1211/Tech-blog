@@ -1,0 +1,58 @@
+{{!-- <div class="container"> --}}
+
+  {{#each posts as |post|}}
+   {{!-- {{post.title}}
+   {{post.post_url}}
+   {{#each post.comments as |comment|}}
+   {{comment.comment_text}}
+   by {{user.username}} 
+   {{comment.created_at}}
+   {{/each}}
+   {{/each}} --}}
+  <div class="jumbotron p-3 p-md-5 text-white rounded" style="background-color: rgb(49, 210, 238);">
+    <div class="col-md-12 px-0">
+      <h1 class="display-4 font-italic"> {{post.title}}</h1>
+      <p class="lead my-3"> {{post.post_url}}</p>
+      <p class="lead my-3">By {{post.user.username}} on {{format_date created_at}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card flex-md-row mb-4 box-shadow h-md-250">
+        {{#each post.comments as |comment|}}
+        <div class="row d-flex" style="padding-left:20px ;">
+          <strong class="text-success">{{comment.comment_text}}</strong>
+          <div class="mb-0 text-muted">by {{user.username}} </div>
+          <p class="card-text mb-auto">{{format_date comment.created_at}}</p>
+
+        </div>
+
+        {{/each}}
+    
+ {{/each}}
+</div>
+</div> 
+{{#if loggedIn}}
+<main role="main" class="container">
+  <form class="comment-form">
+    <div>
+      <textarea style="min-width:500px; min-height:100px;" class="rounded" name="comment-body"></textarea>
+    </div>
+    <div>
+      <button id="comment-submit" class="btn d-inline-block mb-2 text-primary btn-success text-white">Add
+        comment</button>
+    </div>
+
+  </form> 
+</main> 
+{{/if}}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+
+
+<script src="/javascript/comment.js"></script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<link href="blog.css" rel="stylesheet">
