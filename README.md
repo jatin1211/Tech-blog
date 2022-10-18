@@ -52,4 +52,4 @@ Please email me with questions!
 
 
 ## Deployed Site
-https://vast-beach-17756.herokuapp.com/view-blogs
+https://arcane-gorge-43584.herokuapp.com/
