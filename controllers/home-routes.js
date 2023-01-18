@@ -36,7 +36,6 @@ router.get("/", (req, res) => {
         res.status(500).json(err);
       });
   });
-
   
   router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
@@ -91,7 +90,6 @@ router.get('/posts/:id', (req, res) => {
               res.status(404).json({ message: 'No postfound' });
               return;
           }
-
           const posts = dbBlogData.map((post) => post.get({ plain: true }));
           console.log(posts);
           res.render("single-post", {
@@ -102,7 +100,5 @@ router.get('/posts/:id', (req, res) => {
           res.status(500).json(err);
       });
 });
-
-  
   module.exports = router;
   

@@ -1,14 +1,5 @@
-{{!-- <div class="container"> --}}
 
   {{#each posts as |post|}}
-   {{!-- {{post.title}}
-   {{post.post_url}}
-   {{#each post.comments as |comment|}}
-   {{comment.comment_text}}
-   by {{user.username}} 
-   {{comment.created_at}}
-   {{/each}}
-   {{/each}} --}}
   <div class="jumbotron p-3 p-md-5 text-white rounded" style="background-color: rgb(49, 210, 238);">
     <div class="col-md-12 px-0">
       <h1 class="display-4 font-italic"> {{post.title}}</h1>
@@ -26,9 +17,7 @@
           <p class="card-text mb-auto">{{format_date comment.created_at}}</p>
 
         </div>
-
         {{/each}}
-    
  {{/each}}
 </div>
 </div> 
@@ -50,9 +39,6 @@
   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 
-
 <script src="/javascript/comment.js"></script>
-
-
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 <link href="blog.css" rel="stylesheet">

@@ -6,6 +6,7 @@ const dashboardRoutes = require('./dashboard-routes.js');
 const postRoutes = require('./post-routes');
 const editPostRoutes = require('./edit-posts');
 
+//defining all home route  9 endpoints
 router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
 router.use('/dashboard', dashboardRoutes);

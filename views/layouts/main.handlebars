@@ -30,13 +30,9 @@
       {{#if loggedIn}}
       <button type="button" id="logout" class="btn btn-warning mx-1"><a href="/logout">Logout</a></button>
       <button id="dashboard" class="btn btn-warning mx-1"><a href="/dashboard">Dashboard</a></button>
-      {{!-- <button id="dashboard" class="btn btn-warning mx-1"><a href="/">Homepage</a></button> --}}
       {{/if}}
       </nav>
     </header>
-    {{!-- {{#unless loggedIn}}
-      <h2 class="info">Please Login/Signup to enjoy the Tech Blog !!</h2>
-      {{/unless}} --}}
     <main>
       {{{ body }}}
     </main>
@@ -44,11 +40,7 @@
     <footer class=" bg-light p-2 text-center">
       Thanks for visiting!
     </footer>
-  
- 
   <script src="/javascript/logout.js"></script> 
   <script src="/utils/helpers.js"></script>
-  
 </body>
-
 </html>

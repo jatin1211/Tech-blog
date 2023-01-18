@@ -5,16 +5,13 @@
       <div class="title">
         <a href="/posts/{{id}}"><p>{{post.title}}</a> created by {{post.user.username}}</p>
         <button id="edit-btn" class="btn btn-outline-success my-1"><a href="/edit-posts/{{id}}">Edit</a></button>
-        {{!-- <a href="{{post.post_url}}" target="_blank">{{post.title}}</a> --}}
-        {{!-- <span>({{post.post_url}})</span> --}}
+
       </div>
       <div class="meta">
         {{#each post.comments as |comment|}}
         <p>{{comment.comment_text}}</p>
         {{/each}}
-        {{!-- {{post.vote_count}} point(s) by {{post.user.username}} on
-        {{post.created_at}} --}}
-        {{!-- <a>{{post.comments.length}} comment(s)</a> --}}
+
       </div>
     </article>
   </li>

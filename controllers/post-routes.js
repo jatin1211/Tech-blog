@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 //get all blogs
 router.get("/", withAuth, (req, res) => {
-    // expects {title: 'Taskmaster goes public!', blog_post: 'Lorem Ipsum', user_id: 1}
+    // expects {title: 'Coding', blog_post: 'Lorem Ipsum', user_id: 1}
     Post.findAll({
         where :{
         user_id: req.session.user_id},
@@ -34,7 +34,7 @@ router.get("/", withAuth, (req, res) => {
         });
 });
 
-//get one blogs
+//get one blog by id
 router.get('/:id', withAuth,(req, res) => {
     Post.findAll({
         where: { id: req.params.id },
